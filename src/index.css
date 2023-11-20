@@ -1,5 +1,7 @@
 @import url('./styles/nav.css');
 @import url('./styles/footer.css');
+@import url('./styles/standard.css');
+@import url('./styles/about.css');
 
 
 
@@ -25,6 +27,7 @@ a {
   font-weight: 500;
   text-decoration: inherit;
 }
+
 a:hover {
   color: white;
   text-decoration: underline;
@@ -54,9 +57,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -67,9 +72,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
@@ -97,6 +104,7 @@ button:focus-visible {
   h1 {
     font-size: 1.6rem;
   }
+
   .nav-list {
     font-size: 0.8rem;
   }
@@ -108,26 +116,130 @@ button:focus-visible {
     font-size: 1.4rem;
   }
 }
- 
+
 @media screen and (max-width: 440px) {
   h1 {
     font-size: 1.5rem;
   }
-  .nav-list, .footer-text {
+
+  .nav-list,
+  .footer-text {
     display: none;
   }
+
   .tech-text {
     display: inline;
     font-size: 0.8rem;
   }
+
   .footer-list {
     margin-left: 0;
     padding-left: 0;
     display: flex;
     justify-content: space-between;
-    /* justify-content: center; */
-    /* display: flex;
+  }
+}
+
+@media screen and (max-width: 875px) {
+
+  .about-pic {
+    width: 23rem;
+  }
+
+  .standard-text-header {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .skills-text-header {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 706px) {
+
+  .about-pic {
+    width: 20rem;
+  }
+
+  .standard-text-content {
+    margin-top: 0;
+  }
+
+  .skills-text-header {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .skills-div {
+    display: none;
+  }
+
+  .about-pic {
+    width: 17rem;
+  }
+
+  .skills-div-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-pic {
+    width: 10rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .standard-image {
+    margin-top: 20px;
+  }
+
+  .skills-text-header {
+    margin-top: 10px;
+  }
+
+  .skills-list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .skill-li {
     font-size: 0.8rem;
-    width: 100%; */
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
+  }
+
+  .standard-text-content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .standard-p-2 {
+    display: none;
+  }
+  .photo-credit {
+    font-size: 0.8rem;
+  }
+  .standard-image {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 330px) {
+  .standard-p-2-mobile {
+    display: none;
   }
 }

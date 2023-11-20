@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans&display=swap');
+
+.standard-text-header {
+  font-family: 'Alumni Sans', sans-serif;
+  color: #838383;
+  text-decoration: underline;
+}
+
+.standard-container {
+  display: flex;
+  margin-right: 15px;
+}
+
+.standard-text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Archivo Narrow', sans-serif;
+  color: #A7A7A7;
+  width: 60%;
+}
+
+.standard-text-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+
+.standard-mobile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.standard-p-2-mobile {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

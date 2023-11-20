@@ -7,15 +7,11 @@
   margin-left: 5px;
 }
 
-.footer-nav {
-  
-}
-
 .footer-list {
   
   display: none;
 }
 
 .footer-nav-li {
-  
+  font-size: 0.8rem;
 }
