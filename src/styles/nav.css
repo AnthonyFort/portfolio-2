@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1050px;;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.nav-name {
+  font-family: 'Almendra Display', serif;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-li {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav-text {
+  font-family: 'Allerta Stencil', sans-serif;
+  color: #7E7E7E;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.nav-p {
+  font-family: 'Allerta Stencil', sans-serif;
+  color: #7E7E7E;
+}
+
+.tech-text {
+  font-family: 'Archivo Narrow', sans-serif;
+  color: #373737;
+  display: none;
+}
