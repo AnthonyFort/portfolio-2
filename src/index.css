@@ -120,4 +120,14 @@ button:focus-visible {
     display: inline;
     font-size: 0.8rem;
   }
+  .footer-list {
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: center; */
+    /* display: flex;
+    font-size: 0.8rem;
+    width: 100%; */
+  }
 }
