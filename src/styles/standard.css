@@ -37,3 +37,15 @@
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+.standard-category-list {
+  padding-left: 0;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.standard-category-li {
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-bottom: 10px;
+}
