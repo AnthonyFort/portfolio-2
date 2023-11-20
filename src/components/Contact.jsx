@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { FaGithub } from 'react-icons/fa'
+import { FaLinkedin } from "react-icons/fa"
+import { Link } from 'react-router-dom'
 
-export default function Contact () {
+export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [stateMessage, setStateMessage] = useState(null)
@@ -33,9 +36,9 @@ export default function Contact () {
           }, 5000)
         }
       )
-    e.target.reset()  
+    e.target.reset()
   }
-  
+
   return (
     <div className='contact-container'>
       <h2 className='standard-text-header'>CONTACT</h2>
@@ -47,6 +50,10 @@ export default function Contact () {
         <input type="submit" className='contact-submit' />
         {stateMessage && <p>{stateMessage}</p>}
       </form>
+      <div className='contact-links-div'>
+        <Link className='contact-links' to='https://github.com/AnthonyFort?tab=repositories'><FaGithub /></Link>
+        <Link className='contact-links' to='https://www.linkedin.com/in/anthony-fort-8235721b7/'><FaLinkedin /></Link>
+      </div>
     </div>
   )
 }
