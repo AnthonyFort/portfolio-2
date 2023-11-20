@@ -1,0 +1,26 @@
+.contact-blurb {
+  font-family: 'Archivo Narrow', sans-serif;
+  color: #A7A7A7;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-field {
+  width: 60%;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  font-family: 'Archivo Narrow', sans-serif;
+  color: #A7A7A7;
+  background-color: #242424;
+  padding-top: 5px;
+}
+
+.contact-submit {
+  margin-top: 10px;
+  font-family: 'Archivo Narrow', sans-serif;
+}
