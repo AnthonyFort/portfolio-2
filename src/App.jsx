@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import About from './components/About'
 import Coding from './components/Coding'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 import Music from './components/Music'
 import Nav from './components/Nav'
 import NotFound from './components/NotFound'
@@ -23,6 +24,7 @@ function App() {
         <Route path='/Music' element={<Music />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Footer />
     </>
   )
 }

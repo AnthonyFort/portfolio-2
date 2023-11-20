@@ -1,4 +1,5 @@
 @import url('./styles/nav.css');
+@import url('./styles/footer.css');
 
 
 
@@ -92,16 +93,6 @@ button:focus-visible {
   }
 }
 
-
-/* @media screen and (max-width: 550px) {
-  .nav-list {
-    display: none;
-  }
-  .tech-text {
-    display: inline;
-  }
-} */
-
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 1.6rem;
@@ -122,7 +113,7 @@ button:focus-visible {
   h1 {
     font-size: 1.5rem;
   }
-  .nav-list {
+  .nav-list, .footer-text {
     display: none;
   }
   .tech-text {
