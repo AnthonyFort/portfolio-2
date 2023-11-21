@@ -38,6 +38,8 @@ a:hover {
 body {
   position: relative;
   height: 100vh;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
   /* margin: 0;
   display: flex;
   place-items: center;
