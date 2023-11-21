@@ -7,11 +7,21 @@
   margin-left: 5px;
 }
 
-.footer-list {
-  
+.footer-list {  
   display: none;
 }
 
 .footer-nav-li {
   font-size: 0.8rem;
 }
+
+.footer-nav, .footer-div {
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-nav {
+  width: 100%;
+}
+
+

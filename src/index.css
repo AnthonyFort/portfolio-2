@@ -36,6 +36,8 @@ a:hover {
 }
 
 body {
+  position: relative;
+  height: 100vh;
   /* margin: 0;
   display: flex;
   place-items: center;
@@ -190,6 +192,12 @@ button:focus-visible {
   }
 }
 
+@media screen and (min-width: 500px) {
+  .project-header-mobile {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .about-pic {
     width: 10rem;
@@ -221,6 +229,10 @@ button:focus-visible {
   .project-image {
     width: 70%;
     margin-bottom: -50px;
+    margin-top: calc(-15%);
+  }
+  .project-header {
+    display: none;
   }
 }
 

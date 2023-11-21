@@ -17,7 +17,7 @@ import Work from './components/Work'
 function App() {
 
   return (
-    <>
+    <body>
       <Nav />
       <Routes>
         <Route path='/about' element={<About />} />
@@ -29,7 +29,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
-    </>
+    </body>
   )
 }
 
