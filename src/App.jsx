@@ -20,6 +20,7 @@ function App() {
     <body>
       <Nav />
       <Routes>
+      <Route path='/' element={<About />} />
         <Route path='/about' element={<About />} />
         <Route path='/coding' element={<Coding />} />
         <Route path='/coding/:projectId' element={<Project />} />

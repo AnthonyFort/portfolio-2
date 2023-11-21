@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
+import Animated from './Animated'
 
-export default function Music () {
+export default function Music() {
   const musicWork = [
     {
       title: "PhD Research",
@@ -37,15 +38,17 @@ export default function Music () {
   ]
 
   return (
-    <div className="standard-category-div">
-      <h2 className='standard-text-header'>MUSIC</h2>
-      <ul className="standard-category-list">
-        {musicWork.map(item => (
-          <li key={item.id} className="standard-category-li">
-            <Link style={{color: '#A7A7A7'}} to={`/music/${item.id}`}>{item.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Animated>
+      <div className="standard-category-div">
+        <h2 className='standard-text-header'>MUSIC</h2>
+        <ul className="standard-category-list">
+          {musicWork.map(item => (
+            <li key={item.id} className="standard-category-li">
+              <Link style={{ color: '#A7A7A7' }} to={`/music/${item.id}`}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Animated>
   )
 }

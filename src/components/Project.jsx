@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import Animated from './Animated'
 
 import cmDatabaseImage from '../images/macbook-cm-database.webp'
 import FroggusImage from '../images/macbook-froggus.webp'
@@ -45,50 +46,52 @@ export default function Project() {
   const { projectId } = useParams()
 
   return (
-    <div className='standard-mobile-container'>
-      <div className='standard-container project-container'>
-        <h2 className='standard-text-header project-header-mobile'>{projects[projectId].title}</h2>
-        <div className="project-image-div">
-          <img src={projects[projectId].image} alt='website picture' className='project-image' />
-        </div>
-        <div className="project-text-div">
-          <h2 className='standard-text-header project-header'>{projects[projectId].title}</h2>
-          <p className='standard-text-content'>{projects[projectId].blurb}</p>
-          <div className='skills-div'>
-            <div className='project-buttons'>
-              <button type='button' className='contact-submit project-button'><Link to={projects[projectId].gitHub} target='_blank'>GitHub</Link></button>
-              <button type='button' className='contact-submit project-button'><Link to={projects[projectId].visit} target='_blank'>Visit</Link></button>
+    <Animated>
+      <div className='standard-mobile-container'>
+        <div className='standard-container project-container'>
+          <h2 className='standard-text-header project-header-mobile'>{projects[projectId].title}</h2>
+          <div className="project-image-div">
+            <img src={projects[projectId].image} alt='website picture' className='project-image' />
+          </div>
+          <div className="project-text-div">
+            <h2 className='standard-text-header project-header'>{projects[projectId].title}</h2>
+            <p className='standard-text-content'>{projects[projectId].blurb}</p>
+            <div className='skills-div'>
+              <div className='project-buttons'>
+                <button type='button' className='contact-submit project-button'><Link to={projects[projectId].gitHub} target='_blank'>GitHub</Link></button>
+                <button type='button' className='contact-submit project-button'><Link to={projects[projectId].visit} target='_blank'>Visit</Link></button>
+              </div>
+              <h3 className='skills-text-header'>SKILLS</h3>
+              <ul className='skills-list'>
+                {
+                  projects[projectId].skills.map(skill => (
+                    <li key={skill} className='skill-li'>
+                      {skill}
+                    </li>
+                  ))
+                }
+              </ul>
             </div>
-            <h3 className='skills-text-header'>SKILLS</h3>
-            <ul className='skills-list'>
-              {
-                projects[projectId].skills.map(skill => (
-                  <li key={skill} className='skill-li'>
-                    {skill}
-                  </li>
-                ))
-              }
-            </ul>
           </div>
         </div>
-      </div>
-      <div className='skills-div-mobile'>
-        <div className='project-buttons'>
-          <button type='button' className='contact-submit project-button'><Link to={projects[projectId].gitHub} target='_blank' >GitHub</Link></button>
-          <button type='button' className='contact-submit project-button'><Link to={projects[projectId].visit} target='_blank' >Visit</Link></button>
+        <div className='skills-div-mobile'>
+          <div className='project-buttons'>
+            <button type='button' className='contact-submit project-button'><Link to={projects[projectId].gitHub} target='_blank' >GitHub</Link></button>
+            <button type='button' className='contact-submit project-button'><Link to={projects[projectId].visit} target='_blank' >Visit</Link></button>
+          </div>
+          <h3 className='skills-text-header'>SKILLS</h3>
+          <ul className='skills-list'>
+            {
+              projects[projectId].skills.map(skill => (
+                <li key={skill} className='skill-li'>
+                  {skill}
+                </li>
+              ))
+            }
+          </ul>
         </div>
-        <h3 className='skills-text-header'>SKILLS</h3>
-        <ul className='skills-list'>
-          {
-            projects[projectId].skills.map(skill => (
-              <li key={skill} className='skill-li'>
-                {skill}
-              </li>
-            ))
-          }
-        </ul>
       </div>
-    </div>
+    </Animated>
   )
 
 }
