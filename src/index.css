@@ -4,6 +4,7 @@
 @import url('./styles/about.css');
 @import url('./styles/contact.css');
 @import url('./styles/project.css');
+@import url('./styles/music.css');
 
 
 
@@ -247,6 +248,9 @@ button:focus-visible {
 
   .standard-text-content {
     width: 90%;
+  }
+  .music-image-div img {
+    width: 70%;
   }
 }
 

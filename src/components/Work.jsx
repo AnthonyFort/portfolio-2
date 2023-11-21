@@ -14,10 +14,10 @@ export default function Work() {
       title: "Musical 'Decoding'",
       format: 0,
       blurb: (
-        <>
+        <div className='music-text-div'>
           <p>I’m often asked if coding and music are related. I’m not sure, but it was cool to notice that musical ‘Set Theory’ and JavaScript Sets bear resemblance to one another.</p>
           <p>In my Masters thesis, I used Set Theory to ‘decode’ a hidden pattern in an orchestral work by the English composer George Benjamin.</p>
-        </>
+        </div>
       ),
       media: masters
     },
@@ -25,9 +25,9 @@ export default function Work() {
       title: "Fun Kid's Stuff",
       format: 0,
       blurb: (
-        <>
+        <div className='music-text-div'>
           <p>I used to have over 40 piano students, mostly children. For the little ones, I made silly music videos!</p>
-        </>
+        </div>
       ),
       media: 'https://www.youtube.com/embed/EwwrAh_IneY'
     },
@@ -35,10 +35,10 @@ export default function Work() {
       title: "Podcast",
       format: 0,
       blurb: (
-        <>
+        <div className='music-text-div'>
           <p>I love podcasts, but I could never find one that went deep into the creative process. So I made this.</p>
           <button><Link to='https://podcasts.apple.com/us/podcast/psychology-for-songwriters/id1665379292' target='_blank'>Listen</Link></button>
-        </>
+        </div>
       ),
       media: podcast
     },
@@ -46,10 +46,10 @@ export default function Work() {
       title: "The 'Even-Note' Illusion",
       format: 0,
       blurb: (
-        <>
+        <div className='music-text-div'>
           <p>I created an auditory illusion as an appendix to my PhD thesis.</p>
           <p>Aside from being fun, illusions help us understand human perception.</p>
-        </>
+        </div>
       ),
       media: 'https://www.youtube.com/embed/jPP8mfLyGRg?list=PL9NhgGsNfA7XNZ9Ml_T0ZG664XA--1_By'
     },
@@ -57,9 +57,9 @@ export default function Work() {
       title: "Songwriting",
       format: 0,
       blurb: (
-        <>
+        <div className='music-text-div'>
           <p>I started songwriting because I enjoy solving the puzzle of musical structure. Over time, however, it’s a tool for exploring my emotions.</p>
-        </>
+        </div>
       ),
       media: 'https://www.youtube.com/embed/VbWTmpNSTKU'
     },
@@ -67,10 +67,10 @@ export default function Work() {
       title: "University Teaching",
       format: 0,
       blurb: (
-        <>
+        <div className='music-text-div'>
           <p>I have a decade of experience teaching at degree level.</p>
           <p>This free online course I made provides a foundation in Classical keyboard improvisation.</p>
-        </>
+        </div>
       ),
       media: 'https://www.youtube.com/embed/-zs8MLRk45c?list=PL9NhgGsNfA7XVmCLy1IUJQRRdqBLyJq1p'
     },
@@ -78,9 +78,9 @@ export default function Work() {
       title: "Union Chapel",
       format: 0,
       blurb: (
-        <>
+        <div className='music-text-div'>
           <p>When I'm not coding, I'm the Director of Music at Union Chapel Church, Islington.</p>
-        </>
+        </div>
       ),
       media: 'https://www.youtube.com/embed/59uGN0oxS6A'
     },
@@ -110,13 +110,13 @@ export default function Work() {
       {
         projects[workId].format === 0 ?
           <div className='standard-mobile-container'>
-            <div className='standard-container project-container'>
+            <div className='music-container'>
               <h2 className='standard-text-header project-header-mobile'>{projects[workId].title}</h2>
-              <div className="project-image-div">
+              <div className="music-image-div">
                 {renderMedia(projects[workId].media, projects[workId].title)}
               </div>
               <div className="project-text-div">
-                <h2 className='standard-text-header project-header'>{projects[workId].title}</h2>
+                <h2 className='standard-text-header project-header music-header'>{projects[workId].title}</h2>
                 <div className='standard-text-content'>{projects[workId].blurb}</div>
               </div>
             </div>
