@@ -214,6 +214,14 @@ button:focus-visible {
   .skills-list {
     width: 100%;
   }
+
+  .project-container {
+    flex-direction: column;
+  }
+  .project-image {
+    width: 70%;
+    margin-bottom: -50px;
+  }
 }
 
 @media screen and (max-width: 400px) {

@@ -14,3 +14,21 @@
   margin-top: calc(-15%);
   width: 90%;
 }
+
+.project-button {
+  font-family: 'Archivo Narrow', sans-serif;
+  color: #A7A7A7;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.project-container {
+  display: flex;
+}
+
+.project-text-div {
+  margin-bottom: 10px;
+}

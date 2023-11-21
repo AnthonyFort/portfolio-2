@@ -46,18 +46,18 @@ export default function Project () {
 
   return (
     <div className='standard-mobile-container'>
-    <div className='standard-container'>
+    <div className='standard-container project-container'>
       <div className="project-image-div">
         <img src={projects[projectId].image} alt='website picture' className='project-image' />
       </div>
       <div className="project-text-div">
         <h2 className='standard-text-header'>{projects[projectId].title}</h2>
         <p className='standard-text-content'>{projects[projectId].blurb}</p>
-        <div className='project-buttons'>
-          <button type='button'><Link to={projects[projectId].gitHub} target='_blank'>GitHub</Link></button>
-          <button type='button'><Link to={projects[projectId].visit} target='_blank'>Visit</Link></button>
-        </div>
         <div className='skills-div'>
+        <div className='project-buttons'>
+          <button type='button' className='contact-submit project-button'><Link to={projects[projectId].gitHub} target='_blank'>GitHub</Link></button>
+          <button type='button' className='contact-submit project-button'><Link to={projects[projectId].visit} target='_blank'>Visit</Link></button>
+        </div>
           <h3 className='skills-text-header'>SKILLS</h3>
           <ul className='skills-list'>
             {
@@ -72,6 +72,10 @@ export default function Project () {
       </div>
     </div>
     <div className='skills-div-mobile'>
+    <div className='project-buttons'>
+          <button type='button' className='contact-submit project-button'><Link to={projects[projectId].gitHub} target='_blank' >GitHub</Link></button>
+          <button type='button' className='contact-submit project-button'><Link to={projects[projectId].visit} target='_blank' >Visit</Link></button>
+        </div>
       <h3 className='skills-text-header'>SKILLS</h3>
       <ul className='skills-list'>
             {
