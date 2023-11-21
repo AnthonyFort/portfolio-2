@@ -3,10 +3,22 @@ import { Link } from 'react-router-dom'
 export default function Coding () {
 
   const projects = [
-    'CM Database',
-    'Froggus Ad Parnassum',
-    'AAG Music',
-    'AFJH Store',
+    {
+      title: 'CM Database',
+      id: 0
+    },
+    {
+      title: 'Froggus Ad Parnassum',
+      id: 1
+    },
+    {
+      title: 'AAG Music',
+      id: 2
+    },
+    {
+      title: 'AFJH Store',
+      id: 3
+    },
   ]
 
   return (
@@ -14,8 +26,8 @@ export default function Coding () {
       <h2 className='standard-text-header'>CODING</h2>
       <ul className="standard-category-list">
         {projects.map(project => (
-          <li key={project} className="standard-category-li">
-            <Link style={{color: '#A7A7A7'}}>{project}</Link>
+          <li key={project.id} className="standard-category-li">
+            <Link style={{color: '#A7A7A7'}} to={`/coding/${project.id}`}>{project.title}</Link>
           </li>
         ))}
       </ul>

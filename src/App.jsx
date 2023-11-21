@@ -11,6 +11,8 @@ import Footer from './components/Footer'
 import Music from './components/Music'
 import Nav from './components/Nav'
 import NotFound from './components/NotFound'
+import Project from './components/Work'
+import Work from './components/Project'
 
 function App() {
 
@@ -20,8 +22,10 @@ function App() {
       <Routes>
         <Route path='/about' element={<About />} />
         <Route path='/coding' element={<Coding />} />
+        <Route path='/coding/:projectId' element={<Project />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/Music' element={<Music />} />
+        <Route path='/music' element={<Music />} />
+        <Route path='/music/:workId' element={<Work />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

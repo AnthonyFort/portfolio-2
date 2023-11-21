@@ -42,7 +42,7 @@ export default function Music () {
       <ul className="standard-category-list">
         {musicWork.map(item => (
           <li key={item.id} className="standard-category-li">
-            <Link style={{color: '#A7A7A7'}}>{item.title}</Link>
+            <Link style={{color: '#A7A7A7'}} to={`/music/${item.id}`}>{item.title}</Link>
           </li>
         ))}
       </ul>

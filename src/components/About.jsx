@@ -43,7 +43,6 @@ export default function About() {
       </div>
       <p className='standard-text-content standard-p-2-mobile'>I’m available for work, so please get in touch.</p>
       <div className='skills-div-mobile'>
-        
         <h3 className='skills-text-header'>SKILLS</h3>
         <ul className='skills-list'>
           {
