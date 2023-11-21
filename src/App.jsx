@@ -11,8 +11,8 @@ import Footer from './components/Footer'
 import Music from './components/Music'
 import Nav from './components/Nav'
 import NotFound from './components/NotFound'
-import Project from './components/Work'
-import Work from './components/Project'
+import Project from './components/Project'
+import Work from './components/Work'
 
 function App() {
 
