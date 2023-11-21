@@ -12,3 +12,67 @@
   flex-direction: column;
   align-items: center;
 }
+
+.bubble1 {
+  position: relative;
+  left: 10px;
+  background: #3b3b3b;
+  border: white;
+  color: #FFFFFF;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 250px;
+  height: 120px;
+  border-radius: 10px;
+  padding: 0px;
+}
+.bubble1:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: transparent #3b3b3b;
+  border-width: 20px 20px 20px 0;
+  top: 50%;
+  left: -20px;
+  margin-top: -20px;
+}
+
+.bubble2 {
+  margin-top: 15px;
+  float: right;
+  position: relative;
+  right: 10px;
+  background: #3b3b3b;
+  border: white;
+  color: #FFFFFF;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 250px;
+  height: 120px;
+  border-radius: 10px;
+  padding: 0px;
+}
+.bubble2:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: transparent #3b3b3b;
+  border-width: 20px 0 20px 20px;
+  top: 50%;
+  right: -20px;
+  margin-top: -20px;
+}
+
+.start-button {
+  font-family: 'Archivo Narrow', sans-serif;
+}
