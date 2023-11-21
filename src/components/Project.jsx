@@ -8,28 +8,24 @@ import AFJHImage from '../images/macbook-afjh.webp'
 export default function Project () {
   const projects = [
     {
-      id: 0,
       title: 'CM Database',
       blurb: 'A search tool for church musicians to find music related to Biblical readings or themes.',
       skills: ['Django', 'PostgreSQL', 'Python', 'React'],
       image: cmDatabaseImage
     },
     {
-      id: 1,
       title: 'Froggus Ad Parnassum',
       blurb: 'A game that teaches music theory - desktop only - Google Chrome required',
       skills: ['CSS', 'HTML', 'JavaScript'],
       image: FroggusImage
     },
     {
-      id: 2,
       title: 'AAG Music',
       blurb: 'A music-sharing platform with a twist - group project.',
       skills: ['Express', 'MongoDB', 'Node', 'React'],
       image: AAGMusicImage
     },
     {
-      id: 3,
       title: 'AFJH Store',
       blurb: 'An imitation of a basic e-commerce site - pair project',
       skills: ['Bootstrap', 'React'],
@@ -42,10 +38,10 @@ export default function Project () {
   return (
     <div className='standard-mobile-container'>
     <div className='standard-container'>
-      <div className="standard-image">
-        <img src={projects[projectId].image} alt='website picture' className='about-pic' />
+      <div className="project-image-div">
+        <img src={projects[projectId].image} alt='website picture' className='project-image' />
       </div>
-      <div className="standard-text-div">
+      <div className="project-text-div">
         <h2 className='standard-text-header'>{projects[projectId].title}</h2>
         <p className='standard-text-content'>{projects[projectId].blurb}</p>
         <div className='skills-div'>

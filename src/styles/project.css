@@ -1,0 +1,16 @@
+.project-text-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+
+.project-image-div {
+  overflow: hidden;
+  
+}
+
+.project-image {
+  margin-top: calc(-15%);
+  width: 90%;
+}
