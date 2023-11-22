@@ -3,8 +3,6 @@
 .footer-text {
   font-family: 'Archivo Narrow', sans-serif;
   color: #373737;
-  text-align: left;
-  margin-left: 5px;
 }
 
 .footer-list {  
@@ -24,4 +22,6 @@
   width: 100%;
 }
 
-
+.footer-div {
+  right: 0;
+}
