@@ -220,15 +220,21 @@ export default function Work() {
     }
   }
 
-  let myInterval = 0
-
   const [currentText, setCurrentText] = useState('')
   const [playButton, setPlayButton] = useState('START')
   const audioRef = useRef(new Audio(recording))
 
+  let myInterval = 0
+
   useEffect(() => {
     audioRef.current = new Audio(recording);
   }, []);
+
+  useEffect(() => {
+    return () => {
+        audioRef.current.pause()
+    }
+}, [])
 
   function controlButton (event) {
     if (event === 'START' ) {
@@ -287,7 +293,6 @@ export default function Work() {
             <div>
               <p><button onClick={() => controlButton(playButton)} className='start-button'>{playButton}</button></p>
             </div>
-
           </div>
       }
     </Animated>
