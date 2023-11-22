@@ -15,7 +15,7 @@
 
 .footer-nav, .footer-div {
   position: absolute;
-  bottom: 0;
+  bottom: 75px;
 }
 
 .footer-nav {
