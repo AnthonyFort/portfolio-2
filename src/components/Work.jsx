@@ -48,7 +48,7 @@ export default function Work() {
     { 'text': 'from a famous modernist composition,', 'time': 31130 },
     { 'text': 'with no obvious beat,', 'time': 32238 },
     { 'text': '[BREATH]', 'time': 32829 },
-    { 'text': 'and by listening to it 100s of times,', 'time': 33030 },
+    { 'text': 'and by listening to it 100s of times,', 'time': 33000 },
     { 'text': 'I realized that if I moved in a certain way,', 'time': 33992 },
     { 'text': 'the music sounded as if it had a beat.', 'time': 35124 },
     { 'text': '[BREATH]', 'time': 36134 },
@@ -117,7 +117,7 @@ export default function Work() {
     { 'text': '[BREATH]', 'time': 82500 },
     { 'text': 'Your own enlightenment', 'time': 82645 },
     { 'text': 'is just a few hundred', 'time': 83266 },
-    { 'text': 'frustrating experiences away.', 'time': 983909 }
+    { 'text': 'frustrating experiences away.', 'time': 83909 }
   ]
 
   const projects = [
@@ -223,22 +223,32 @@ export default function Work() {
   let myInterval = 0
 
   const [currentText, setCurrentText] = useState('')
+  const [playButton, setPlayButton] = useState('START')
   const audioRef = useRef(new Audio(recording))
 
   useEffect(() => {
     audioRef.current = new Audio(recording);
   }, []);
 
+  function controlButton (event) {
+    if (event === 'START' ) {
+      start()
+    } else {
+      stop()
+    }
+  }
+
   function start() {
-    myInterval = setInterval(checkTime, 100)
+    setPlayButton('STOP')
+    myInterval = setInterval(checkTime, 70)
     audioRef.current.play()
   }
 
   function stop() {
+    setPlayButton('START')
     clearInterval(myInterval)
     audioRef.current.pause()
     setCurrentText('')
-
   }
 
   function checkTime() {
@@ -267,7 +277,7 @@ export default function Work() {
             </div>
           </div>
           :
-          <div>
+          <div className='phd-container'>
             <div className='bubble1'>
               <p>So tell me, what was your PhD thesis about?</p>
             </div>
@@ -275,8 +285,7 @@ export default function Work() {
               <p>{currentText}</p>
             </div>
             <div>
-              <p><button onClick={start} className='start-button'>START</button></p>
-              <p><button onClick={stop} className='start-button'>STOP</button></p>
+              <p><button onClick={() => controlButton(playButton)} className='start-button'>{playButton}</button></p>
             </div>
 
           </div>

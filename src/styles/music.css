@@ -52,7 +52,7 @@
   color: #FFFFFF;
   font-family: 'Archivo Narrow', sans-serif;
   font-size: 20px;
-  line-height: 50px;
+  line-height: 1.6;
   text-align: center;
   width: 250px;
   height: 120px;
@@ -75,4 +75,9 @@
 
 .start-button {
   font-family: 'Archivo Narrow', sans-serif;
+  margin-top: 40px;
+  float: right;
+  margin-right: 20px;
+  padding: 7px;
+  border-color: #7E7E7E;
 }
