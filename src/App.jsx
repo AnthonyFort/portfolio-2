@@ -12,6 +12,7 @@ import Music from './components/Music'
 import Nav from './components/Nav'
 import NotFound from './components/NotFound'
 import Project from './components/Project'
+import Tutorial from './components/Tutorial'
 import Work from './components/Work'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/coding/:projectId' element={<Project />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/music' element={<Music />} />
+        <Route path='/music/tutorial/:tutorialId' element={<Tutorial />} />
         <Route path='/music/:workId' element={<Work />} />
         <Route path='*' element={<NotFound />} />
       </Routes>

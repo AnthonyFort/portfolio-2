@@ -1,0 +1,36 @@
+
+
+.tutorial-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tutorial-text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Archivo Narrow', sans-serif;
+  color: #A7A7A7;
+  width: 200px;
+}
+
+.tutorial-list {
+  padding-left: 0;
+}
+
+.tutorial-li {
+  display: flex;
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-bottom: 10px;
+}
+
+.tutorial-start-button {
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-top: 40px;
+  float: right;
+  margin-right: 20px;
+  padding: 7px;
+  border-color: #7E7E7E;
+}

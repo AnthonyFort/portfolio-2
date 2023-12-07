@@ -195,6 +195,7 @@ export default function Work() {
       blurb: (
         <div className='music-text-div'>
           <p>When I'm not coding, I'm the Director of Music at Union Chapel Church, Islington.</p>
+          <Link style={{ color: '#A7A7A7' }} to={'/music/tutorial/tutorial'}>Tutorial</Link>
         </div>
       ),
       media: 'https://www.youtube.com/embed/59uGN0oxS6A'
