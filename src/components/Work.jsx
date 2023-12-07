@@ -230,7 +230,10 @@ export default function Work() {
   let myInterval = 0
 
   useEffect(() => {
-    mernAudioRef.current.play()
+    if (workId === '0' || location.pathname === '/music/0') {
+      mernAudioRef.current.play()
+    }
+    
     audioRef.current = new Audio(recording)
   }, [])
 
