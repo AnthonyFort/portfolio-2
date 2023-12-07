@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Animated from './Animated'
 
@@ -201,7 +201,8 @@ export default function Tutorial() {
   const { tutorialId } = useParams()
   const [currentPage, setCurrentPage] = useState()
   const [backButtonDestination, setBackButtonDestination] = useState()
-  const [playButton, setPlayButton] = useState('START')
+  const [playingAudioIndex, setPlayingAudioIndex] = useState(null)
+  const audioPlayer = useRef(new Audio())
 
   useEffect(() => {
     const current = tutorialPage.find(page => page.id === tutorialId)
@@ -214,30 +215,59 @@ export default function Tutorial() {
         setBackButtonDestination('/music/7')
       } else if (['knees', 'night', 'both'].includes(currentPage.id)) {
         setBackButtonDestination('/music/tutorial/tutorial')
+      } else if (['tune1', 'shadow', 'glide', 'elastic'].includes(currentPage.id)) {
+        setBackButtonDestination('/music/tutorial/knees')
+      } else if (['tune2', 'early', 'circle', 'bells'].includes(currentPage.id)) {
+        setBackButtonDestination('/music/tutorial/night')
+      } else if (['soprano', 'alto', 'tenor', 'bass'].includes(currentPage.id)) {
+        setBackButtonDestination('/music/tutorial/both')
       }
     }
   }, [currentPage])
 
-  function controlButton (event) {
-    if (event === 'START' ) {
-      start()
+  useEffect(() => {
+    return () => {
+      if (audioPlayer.current) {
+        audioPlayer.current.pause()
+        audioPlayer.current.currentTime = 0
+      }
+    };
+  }, [currentPage])
+
+  function toggleAudio(chorusIndex, textIndex = null) {
+    const uniqueId = textIndex !== null ? `chorus${chorusIndex}-${textIndex}` : `chorus-${chorusIndex}`
+    if (playingAudioIndex === uniqueId) {
+      stopAudio()
     } else {
-      stop()
+      if (playingAudioIndex !== null) {
+        stopAudio()
+      }
+      startAudio(chorusIndex, textIndex)
     }
   }
 
-  function start() {
-    setPlayButton('STOP')
+  function startAudio(chorusIndex, textIndex = null) {
+    let audioSrc
+    if (textIndex !== null) {
+      audioSrc = currentPage[`audio${chorusIndex}`][textIndex]
+    } else {
+      audioSrc = currentPage.audio[chorusIndex]
+    }
+    const uniqueId = textIndex !== null ? `chorus${chorusIndex}-${textIndex}` : `chorus-${chorusIndex}`
+    if (audioPlayer.current.src !== audioSrc) {
+      audioPlayer.current.src = audioSrc
+    }
 
-
+    audioPlayer.current.play()
+    setPlayingAudioIndex(uniqueId)
   }
 
-  function stop() {
-    setPlayButton('START')
-
-
-
+  function stopAudio() {
+    audioPlayer.current.pause()
+    audioPlayer.current.currentTime = 0
+    setPlayingAudioIndex(null)
   }
+
 
   const renderContent = () => {
     if (!currentPage) return null
@@ -270,14 +300,54 @@ export default function Tutorial() {
               {
                 currentPage.choruses.map((chorus, index) => (
                   <li key={index} className="tutorial-li">
-                    <p>Chorus {index + 1}: {chorus}</p>
-                    <div>
-                      <p><button onClick={() => controlButton(playButton)} className='tutorial-start-button'>{playButton}</button></p>
+                    <div className='chorus-text-div'>
+                      <p>Chorus {index + 1}: {chorus}</p>
+                    </div>
+                    <div className='tutorial-button-div'>
+                      <button onClick={() => toggleAudio(index)} className='tutorial-start-button'>
+                        {playingAudioIndex === `chorus-${index}` ? 'STOP' : 'START'}
+                      </button>
                     </div>
                   </li>
                 ))
               }
             </ul>
+          </div>
+        )
+      case 3:
+        return (
+          <div className="tutorial-div">
+            <h2 className='standard-text-header'>{currentPage.header}</h2>
+            <div className='chorus-div'>
+              <p >Chorus 1</p>
+              {currentPage.chorus1Text.map((text, index) => (
+                <div key={`chorus1-${index}`} className='individual-chorus-div'>
+                  <p >{text}</p>
+                  <p><button onClick={() => toggleAudio(1, index)} className='singer-button'>{playingAudioIndex === `chorus1-${index}` ? 'STOP' : 'START'}
+                  </button></p>
+                </div>
+              ))}
+            </div>
+            <div className='chorus-div'>
+              <p >Chorus 2</p>
+              {currentPage.chorus2Text.map((text, index) => (
+                <div key={`chorus2-${index}`} className='individual-chorus-div'>
+                  <p >{text}</p>
+                  <p><button onClick={() => toggleAudio(2, index)} className='singer-button'>{playingAudioIndex === `chorus2-${index}` ? 'STOP' : 'START'}
+                  </button></p>
+                </div>
+              ))}
+            </div>
+            <div className='chorus-div'>
+              <p >Chorus 3</p>
+              {currentPage.chorus3Text.map((text, index) => (
+                <div key={`chorus3-${index}`} className='individual-chorus-div'>
+                  <p >{text}</p>
+                  <p><button onClick={() => toggleAudio(3, index)} className='singer-button'>{playingAudioIndex === `chorus3-${index}` ? 'STOP' : 'START'}
+                  </button></p>
+                </div>
+              ))}
+            </div>
           </div>
         )
     }
@@ -295,7 +365,6 @@ export default function Tutorial() {
           <button><Link to={backButtonDestination}>Back</Link></button>
         </div>
       </Animated>
-
     </div>
   )
 }
