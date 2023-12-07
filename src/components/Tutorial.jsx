@@ -294,7 +294,7 @@ export default function Tutorial() {
             <h2 className='standard-text-header'>{currentPage.header}</h2>
             <p className='tutorial-text-content'>{currentPage.blurb}</p>
             <div className="project-image-div">
-              <img src={currentPage.image} alt='website picture' className='' />
+              <img src={currentPage.image} alt='website picture' className='tutorial-image' />
             </div>
             <ul className='tutorial-list'>
               {
