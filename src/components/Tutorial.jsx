@@ -126,7 +126,7 @@ export default function Tutorial() {
       format: 2,
       id: 'early',
       header: 'Early Slinky',
-      blurb: "Creates up the -'vine' early on",
+      blurb: "Creeps up the -'vine' early on",
       image: earlyPic,
       choruses: ['Alto', 'Alto', 'Tenor'],
       audio: [early1, early2, early3],
@@ -140,7 +140,7 @@ export default function Tutorial() {
       image: circlePic,
       choruses: ['Tenor', 'Tenor', 'Bass'],
       audio: [circle1, circle2, circle3],
-      memoryTip: "Circles around the first '-vine' and creeps up the second."
+      memoryTip: "Memory tip: Circles around the first '-vine' and creeps up the second."
     },
     {
       format: 2,
@@ -312,6 +312,7 @@ export default function Tutorial() {
                 ))
               }
             </ul>
+            <p>{currentPage.memoryTip}</p>
           </div>
         )
       case 3:
