@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import masters from '../images/masters.webp'
 import podcast from '../images/podcast.webp'
 import recording from '../recordings/phd-talk.mp3'
+import mern from '../recordings/mern.mp3'
 
 export default function Work() {
 
@@ -224,17 +225,31 @@ export default function Work() {
   const [currentText, setCurrentText] = useState('')
   const [playButton, setPlayButton] = useState('START')
   const audioRef = useRef(new Audio(recording))
+  const mernAudioRef = useRef(new Audio(mern))
 
   let myInterval = 0
 
   useEffect(() => {
-    audioRef.current = new Audio(recording);
-  }, []);
+    mernAudioRef.current.play()
+    audioRef.current = new Audio(recording)
+  }, [])
 
   useEffect(() => {
     return () => {
         audioRef.current.pause()
+        mernAudioRef.current.pause()
     }
+}, [])
+
+useEffect(() => {
+  const phdAudio = audioRef.current
+  phdAudio.onended = () => {
+    mernAudioRef.current.play()
+  }
+
+  return () => {
+    phdAudio.onended = null
+  }
 }, [])
 
   function controlButton (event) {
@@ -249,6 +264,9 @@ export default function Work() {
     setPlayButton('STOP')
     myInterval = setInterval(checkTime, 70)
     audioRef.current.play()
+    if (!mernAudioRef.current.paused) {
+      mernAudioRef.current.pause()
+    }
   }
 
   function stop() {
@@ -256,6 +274,7 @@ export default function Work() {
     clearInterval(myInterval)
     audioRef.current.pause()
     setCurrentText('')
+    mernAudioRef.current.play()
   }
 
   function checkTime() {
